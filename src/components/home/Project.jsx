@@ -21,6 +21,8 @@ const dummyProject = {
   description: null, 
   git_url: null, 
   personal_page: null, 
+  temp1: null, 
+  temp2: null
 };
 */
 
@@ -28,26 +30,75 @@ const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-/*
-// 멤버 정보 배열 변수에 저장
-const members_info = [
-    {id: 1, name: "최철웅", description: "", git_url: ""}, 
-    {id: 2, name: "지현종", description: "", git_url: ""}, 
-    {id: 3, name: "임동혁", description: "", git_url: ""}, 
-    {id: 4, name: "김민경", description: "", git_url: ""}, 
-    {id: 4, name: "박정연", description: "", git_url: ""}, 
-];
-*/
 
+// heading: members -> 제목
+// username: hashirshoaeb -> 아마 깃헙 Url 때문에 있는 듯..
+// length: 5 -> 멤버 카드 개수
+// specific: [] -> 이거도 무슨 레포 api 때문에 있는 거 같음
 const Project = ({ heading, username, length, specfic }) => {
+  // 여기들은 지워도 될 거 같당
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specficReposAPI = `${API}/repos/${username}`;
+  // dummy는 냅두고
   const dummyProjectsArr = new Array(length + specfic.length).fill(
     dummyProject
   );
 
-  const [projectsArray, setProjectsArray] = useState([]);
+  // 멤버 정보 배열 변수에 저장
+  const members_info = [
+    {name: "최철웅 🦅", 
+        description: "독수리 오남매, 첫째.ᐟ", 
+        svn_url: "https://github.com/Owen-Choi", 
+        personal_page: "/home", 
+        student_id: "201835539", 
+        email: "oldstyle482@gmail.com", 
+        stargazers_count: 0, 
+        languages_url: "", 
+        pushed_at: 0}, 
+    {name: "지현종 🦅", 
+        description: "독수리 오남매, 둘째.ᐟ.ᐟ", 
+        svn_url: "https://github.com/JongAAAAAAAAA", 
+        personal_page: "/home", 
+        student_id: "201835746", 
+        email: "wlguswhd0809@naver.com", 
+        stargazers_count: 0, 
+        languages_url: "", 
+        pushed_at: 0}, 
+    {name: "임동혁 🦅", 
+        description: "독수리 오남매, 셋째.ᐟ.ᐟ.ᐟ", 
+        svn_url: "https://github.com/IMDongH", 
+        personal_page: "/home",
+        student_id: "201835506", 
+        email: "idh1007@naver.com",  
+        stargazers_count: 0, 
+        languages_url: "", 
+        pushed_at: 0}, 
+    {name: "김민경 🦅", 
+        description: "독수리 오남매, 넷째.ᐟ.ᐟ.ᐟ.ᐟ", 
+        svn_url: "https://github.com/minkyung73", 
+        personal_page: "/home", 
+        student_id: "202035311", 
+        email: "minkyung7365@gmail.com", 
+        stargazers_count: 10, 
+        languages_url: "", 
+        pushed_at: 0}, 
+    {name: "박정연 🦅", 
+        description: "독수리 오남매, 다섯째.ᐟ.ᐟ.ᐟ.ᐟ.ᐟ", 
+        svn_url: "https://github.com/jyeon172", 
+        personal_page: "/home", 
+        student_id: "202035521", 
+        email: "jyeon172@naver.com", 
+        stargazers_count: 0, 
+        languages_url: "", 
+        pushed_at: 0}, 
+  ];
 
+  // 여기는 냅둬도 될 거 같당
+  // 아니야 없애도 돼
+  const [projectsArray, setProjectsArray] = useState([]);
+  // const [membersArray, setMembersArray] = useState([]);
+
+  // 이거 필요없고 위에 projectArray로 멤버 정보 채우기
   const fetchRepos = useCallback(async () => {
     let repoList = [];
     try {
@@ -72,6 +123,7 @@ const Project = ({ heading, username, length, specfic }) => {
     }
   }, [allReposAPI, length, specfic, specficReposAPI]);
 
+  // 여기도 지워도 될 듯?
   useEffect(() => {
     fetchRepos();
   }, [fetchRepos]);
@@ -82,12 +134,12 @@ const Project = ({ heading, username, length, specfic }) => {
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
         <Row>
           {projectsArray.length
-            ? projectsArray.map((project, index) => (
-              <ProjectCard
-                key={`project-card-${index}`}
-                id={`project-card-${index}`}
-                value={project}
-              />
+            ? members_info.map((project, index) => (
+                <ProjectCard
+                  // key={`project-card-${index}`}
+                  // id={`project-card-${index}`}
+                  value={project}
+                />
             ))
             : dummyProjectsArr.map((project, index) => (
               <ProjectCard

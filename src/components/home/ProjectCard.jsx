@@ -9,6 +9,9 @@ const ProjectCard = ({ value }) => {
     name,
     description,
     svn_url,
+    personal_page,
+    student_id, 
+    email, 
     stargazers_count,
     languages_url,
     pushed_at,
@@ -19,32 +22,34 @@ const ProjectCard = ({ value }) => {
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
-          {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
+          {svn_url ? <CardButtons svn_url={svn_url} personal_page={personal_page} /> : <Skeleton count={2} />}
           <hr />
-          {languages_url ? (
+          <p><b>student ID: </b>{student_id}</p>
+          <p><b>email: </b>{email}</p>
+          {/* {languages_url ? (
             <Language languages_url={languages_url} repo_url={svn_url} />
           ) : (
             <Skeleton count={3} />
-          )}
-          {value ? (
+          )} */}
+          {/* {value ? (
             <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
           ) : (
             <Skeleton />
-          )}
+          )} */}
         </Card.Body>
       </Card>
     </Col>
   );
 };
 
-const CardButtons = ({ svn_url }) => {
+const CardButtons = ({ svn_url, personal_page }) => {
   return (
     <div className="d-grid gap-2 d-md-block">
       <a
-        href={`${svn_url}/archive/master.zip`}
+        href={personal_page}
         className="btn btn-outline-secondary mx-2"
       >
-        <i className="fab fa-github" /> Clone Project
+        <i className="fab fa-github" /> Page
       </a>
       <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
         <i className="fab fa-github" /> Repo
@@ -52,7 +57,7 @@ const CardButtons = ({ svn_url }) => {
     </div>
   );
 };
-
+//==========================================================
 const Language = ({ languages_url, repo_url }) => {
   const [data, setData] = useState([]);
 
@@ -99,7 +104,7 @@ const Language = ({ languages_url, repo_url }) => {
     </div>
   );
 };
-
+//==========================================================
 const CardFooter = ({ star_count, repo_url, pushed_at }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
