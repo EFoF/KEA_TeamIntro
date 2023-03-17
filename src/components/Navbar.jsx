@@ -3,7 +3,7 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
+import { mainBody, repos, about } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 import { useLocation } from "react-router";
 
@@ -80,13 +80,18 @@ const Navigation = React.forwardRef((props, ref) => {
           
           
           {/* 이 부분에 설문조사 페이지로 라우팅을 넣겠다. */}
-          {skills.show && (
+          <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/Form"}>              
+              Form
+            </NavLink>
+          {/* {skills.show && (
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/Form"}>              
               Form
             </NavLink>
-          )}
+          )} */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
