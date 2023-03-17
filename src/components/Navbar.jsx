@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
+import Main from "../pages/Main";
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
@@ -79,9 +80,8 @@ const Navigation = React.forwardRef((props, ref) => {
           {skills.show && (
             <NavLink
               className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
+              to="/Form" component={Main}>          
+              Form
             </NavLink>
           )}
         </Nav>
