@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
-import Main from "../pages/Main";
+import { useLocation } from "react-router";
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
@@ -14,6 +14,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const navbarMenuRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+  const location = useLocation();
   useScrollPosition(
     ({ prevPos, currPos }) => {
       if (!navbarDimensions) return;
@@ -26,6 +27,7 @@ const Navigation = React.forwardRef((props, ref) => {
   );
 
   React.useEffect(() => {
+    if(location.pathname === '/Form') return;
     if (!navbarDimensions) return;
     navBottom - scrollPosition >= ref.current.offsetTop
       ? setIsTop(false)
@@ -80,7 +82,7 @@ const Navigation = React.forwardRef((props, ref) => {
           {skills.show && (
             <NavLink
               className="nav-item lead"
-              to="/Form" component={Main}>          
+              href={process.env.PUBLIC_URL + "/Form"}>              
               Form
             </NavLink>
           )}
