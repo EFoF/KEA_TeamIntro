@@ -36,15 +36,7 @@ const SideMenu = ({ info }) => {
     dispatch(questionActions.addQuestion(newQuestion(newId)));
   };
 
-  return (    
-    // <Wrapper>
-    //   <div className="container">
-    //     <Link to="/preview">
-    //       <img onClick={handlePreview} src={ShowIcon} alt="preview" />               
-    //     </Link>          
-    //   <img onClick={handleAddQuestion} src={AddIcon} alt="add" />
-    // </div>
-    // </Wrapper>
+  return (        
     <Wrapper>
       <Button size="sm" event={handleAddQuestion}>
           추가

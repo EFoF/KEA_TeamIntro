@@ -17,6 +17,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const location = useLocation();
   useScrollPosition(
     ({ prevPos, currPos }) => {
+      if(location.pathname === '/Form') return;
       if (!navbarDimensions) return;
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
