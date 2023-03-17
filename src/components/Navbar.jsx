@@ -75,6 +75,7 @@ const Navigation = React.forwardRef((props, ref) => {
           )}
           
           
+          {/* 이 부분에 설문조사 페이지로 라우팅을 넣겠다. */}
           {skills.show && (
             <NavLink
               className="nav-item lead"
