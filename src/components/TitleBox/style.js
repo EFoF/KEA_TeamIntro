@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
       font-size: 32px;
       margin-top: 24px;    
       text-align: center;              
+      color: ${({ theme }) => theme.color.white};
       &::placeholder {
         color: ${({ theme }) => theme.color.white};
       }
@@ -35,7 +36,7 @@ export const Wrapper = styled.div`
 
   .preview {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 
     &:before {
       content: '';
@@ -49,7 +50,7 @@ export const Wrapper = styled.div`
     &__title {
       margin-left: 20px;
       margin-top: 16px;
-      font-size: 32px;
+      font-size: 32px;         
     }
 
     &__detail {

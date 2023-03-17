@@ -33,7 +33,7 @@ const TitleBox = ({ info, handleChange }) => {
         </div>
       ) : (
         <div className="preview">
-          <div className="preview__title">{info.title}</div>
+          <div className="preview__title" style={{color:'white'}}>{info.title}</div>          
           <div className="preview__detail">{info.detail}</div>
           <hr />
           <div className="preview__guide">* 필수항목</div>
