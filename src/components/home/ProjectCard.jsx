@@ -57,7 +57,7 @@ const CardButtons = ({ svn_url, personal_page }) => {
     </div>
   );
 };
-//==========================================================
+
 const Language = ({ languages_url, repo_url }) => {
   const [data, setData] = useState([]);
 
@@ -104,7 +104,7 @@ const Language = ({ languages_url, repo_url }) => {
     </div>
   );
 };
-//==========================================================
+
 const CardFooter = ({ star_count, repo_url, pushed_at }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
