@@ -21,19 +21,22 @@ export const Wrapper = styled.div`
   margin-top: 20px;
   padding: 10px 20px;
   height: auto !important;
+  border: 3px solid ${theme.color.gray};
 
   .handler {
-    ${({ theme }) => theme.flexCenter}
+    ${({ theme }) => theme.flexCenter}    
+    padding-up : 15px;
+    padding-bottom : 15px;
     .drag-icon {
-      width: 40px;
+      width: 40px;    
     }
   }
 
   input {
-    border: none;
+    border: none;    
   }
 
-  .question {
+  .question {    
     display: flex;
     flex-direction : column;
     align-items: left;
@@ -63,7 +66,7 @@ export const Wrapper = styled.div`
     border: 1px solid ${theme.color.border_gray};
   }
 
-  .settings {
+  .settings {    
     display: flex;
     align-items: center;
     justify-content: end;
