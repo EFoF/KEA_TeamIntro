@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
+import { useLocation } from "react-router";
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
@@ -13,8 +14,10 @@ const Navigation = React.forwardRef((props, ref) => {
   const navbarMenuRef = React.useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
+  const location = useLocation();
   useScrollPosition(
     ({ prevPos, currPos }) => {
+      if(location.pathname === '/Form') return;
       if (!navbarDimensions) return;
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
@@ -25,6 +28,7 @@ const Navigation = React.forwardRef((props, ref) => {
   );
 
   React.useEffect(() => {
+    if(location.pathname === '/Form') return;
     if (!navbarDimensions) return;
     navBottom - scrollPosition >= ref.current.offsetTop
       ? setIsTop(false)
@@ -75,12 +79,12 @@ const Navigation = React.forwardRef((props, ref) => {
           )}
           
           
+          {/* 이 부분에 설문조사 페이지로 라우팅을 넣겠다. */}
           {skills.show && (
             <NavLink
               className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
+              href={process.env.PUBLIC_URL + "/Form"}>              
+              Form
             </NavLink>
           )}
         </Nav>
