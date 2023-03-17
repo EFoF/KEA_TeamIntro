@@ -9,11 +9,11 @@ const TitleBox = ({ info, handleChange }) => {
   const { pathname } = location;
   const isPreview = pathname === '/preview';
   const isResult = pathname === '/result';
-
+  const gradient = {gradientColors: "#ff7f00, #ffa500, #ffb444, #ec9f2e, #d99944"}
   return (
     <Wrapper>
       {!isPreview && !isResult ? (
-        <div className="inputs">
+        <div className="inputs" style={{background: `linear-gradient(135deg,${gradient})`}}>
           <input
             type="text"
             className="inputs__title"

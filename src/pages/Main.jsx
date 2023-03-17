@@ -63,7 +63,7 @@ function Main() {
 
 // ${({ theme }) => theme.flexCenter};
 export const Wrapper = styled.div`
-${({ theme }) => theme.flexCenter};
+${({ theme }) => theme.flexCenter};  
   margin: 0 auto;
   max-width: 1440px;
   align-items: center;

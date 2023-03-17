@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.color.white};
+  background: ${({ theme }) => theme.color.orange};
   width: 600px;
   height: 90px;  
   border-radius: 10px;
@@ -19,11 +19,12 @@ export const Wrapper = styled.div`
     
 
     &__title {
+      background: ${({ theme }) => theme.color.orange};
       font-size: 32px;
       margin-top: 24px;    
       text-align: center;              
       &::placeholder {
-        color: ${({ theme }) => theme.color.black};
+        color: ${({ theme }) => theme.color.white};
       }
     }
 
