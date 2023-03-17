@@ -7,7 +7,6 @@ const navBar = {
 const mainBody = {
   gradientColors: "#ff7f00, #ffa500, #ffb444, #ec9f2e, #d99944",
   Name: "독수리 오남매",
-  intro: "안녕하세요 저희는 독수리 오남매입니다!",
   message: "어느 때는 하나, 또 어느 때는 다섯."
 };
 
