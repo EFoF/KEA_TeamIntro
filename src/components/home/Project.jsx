@@ -13,9 +13,31 @@ const dummyProject = {
   languages_url: null,
   pushed_at: null,
 };
+
+/*
+// 카드 별 정보
+const dummyProject = {
+  name: null, 
+  description: null, 
+  git_url: null, 
+  personal_page: null, 
+};
+*/
+
 const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
+
+/*
+// 멤버 정보 배열 변수에 저장
+const members_info = [
+    {id: 1, name: "최철웅", description: "", git_url: ""}, 
+    {id: 2, name: "지현종", description: "", git_url: ""}, 
+    {id: 3, name: "임동혁", description: "", git_url: ""}, 
+    {id: 4, name: "김민경", description: "", git_url: ""}, 
+    {id: 4, name: "박정연", description: "", git_url: ""}, 
+];
+*/
 
 const Project = ({ heading, username, length, specfic }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
