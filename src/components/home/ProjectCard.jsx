@@ -10,8 +10,8 @@ const ProjectCard = ({ value }) => {
     description,
     svn_url,
     personal_page,
-    student_id, 
-    email, 
+    student_id,
+    email,
     stargazers_count,
     languages_url,
     pushed_at,
@@ -21,11 +21,23 @@ const ProjectCard = ({ value }) => {
       <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
-          <Card.Text>{(!description) ? "" : description || <Skeleton count={3} />} </Card.Text>
-          {svn_url ? <CardButtons svn_url={svn_url} personal_page={personal_page} /> : <Skeleton count={2} />}
+          <Card.Text>
+            {!description ? "" : description || <Skeleton count={3} />}{" "}
+          </Card.Text>
+          {svn_url ? (
+            <CardButtons svn_url={svn_url} personal_page={personal_page} />
+          ) : (
+            <Skeleton count={2} />
+          )}
           <hr />
-          <p><b>student ID: </b>{student_id}</p>
-          <p><b>email: </b>{email}</p>
+          <p>
+            <b>student ID: </b>
+            {student_id}
+          </p>
+          <p>
+            <b>email: </b>
+            {email}
+          </p>
           {/* {languages_url ? (
             <Language languages_url={languages_url} repo_url={svn_url} />
           ) : (
@@ -45,13 +57,14 @@ const ProjectCard = ({ value }) => {
 const CardButtons = ({ svn_url, personal_page }) => {
   return (
     <div className="d-grid gap-2 d-md-block">
-      <a
-        href={personal_page}
-        className="btn btn-outline-secondary mx-2"
-      >
+      <a href={personal_page} className="btn btn-outline-secondary mx-2">
         <i className="fab fa-github" /> Page
       </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
+      <a
+        href={svn_url}
+        target=" _blank"
+        className="btn btn-outline-secondary mx-2"
+      >
         <i className="fab fa-github" /> Repo
       </a>
     </div>
@@ -86,20 +99,19 @@ const Language = ({ languages_url, repo_url }) => {
       Languages:{" "}
       {array.length
         ? array.map((language) => (
-          <a
-            key={language}
-            className="card-link"
-            href={repo_url + `/search?l=${language}`}
-            target=" _blank"
-            rel="noopener noreferrer"
-          >
-            <span className="badge bg-light text-dark">
-              {language}:{" "}
-              {Math.trunc((data[language] / total_count) * 1000) / 10} %
-            </span>
-          </a>
-
-        ))
+            <a
+              key={language}
+              className="card-link"
+              href={repo_url + `/search?l=${language}`}
+              target=" _blank"
+              rel="noopener noreferrer"
+            >
+              <span className="badge bg-light text-dark">
+                {language}:{" "}
+                {Math.trunc((data[language] / total_count) * 1000) / 10} %
+              </span>
+            </a>
+          ))
         : "code yet to be deployed."}
     </div>
   );

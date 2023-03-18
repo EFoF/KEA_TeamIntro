@@ -17,7 +17,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const location = useLocation();
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      if(location.pathname === '/Form') return;
+      if (location.pathname === "/Form") return;
       if (!navbarDimensions) return;
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
@@ -27,22 +27,27 @@ const Navigation = React.forwardRef((props, ref) => {
     [navBottom]
   );
 
-  React.useEffect(() => {
-    if(location.pathname === '/Form') return;
-    if (!navbarDimensions) return;
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+  // 여기 좀 이상한 것 같아요 - 현종.
+  // React.useEffect(() => {
+  //   if (location.pathname === "/Form") return;
+  //   if (!navbarDimensions) return;
+  //   navBottom - scrollPosition >= ref.current.offsetTop
+  //     ? setIsTop(false)
+  //     : setIsTop(true);
+  // }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
+      className={`px-3 fixed-top  ${
+        !isTop ? "navbar-white" : "navbar-transparent"
+      }`}
       expand="lg"
     >
-      <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
+      <Navbar.Brand
+        className="navbar-brand"
+        href={process.env.PUBLIC_URL + "/#home"}
+      >
         {`${mainBody.Name}`}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
@@ -70,21 +75,26 @@ const Navigation = React.forwardRef((props, ref) => {
             Github
           </NavLink>
           {repos.show && (
-
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-            >
+            <NavLink href={process.env.PUBLIC_URL + "/#projects"}>
               Projects
             </NavLink>
           )}
-          
-          
+
           {/* 이 부분에 설문조사 페이지로 라우팅을 넣겠다. */}
           <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/Form"}>              
-              Form
-            </NavLink>
+            className="nav-item lead"
+            href={process.env.PUBLIC_URL + "/Form"}
+          >
+            Form
+          </NavLink>
+
+          {/* 현종 라우팅 테스트 */}
+          {/* <NavLink
+            className="nav-item lead"
+            href={process.env.PUBLIC_URL + "/J-Page"}
+          >
+            J-Page
+          </NavLink> */}
           {/* {skills.show && (
             <NavLink
               className="nav-item lead"

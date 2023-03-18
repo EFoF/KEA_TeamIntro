@@ -30,7 +30,6 @@ const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-
 // heading: members -> 제목
 // username: hashirshoaeb -> 아마 깃헙 Url 때문에 있는 듯..
 // length: 5 -> 멤버 카드 개수
@@ -46,51 +45,61 @@ const Project = ({ heading, username, length, specfic }) => {
 
   // 멤버 정보 배열 변수에 저장
   const members_info = [
-    {name: "최철웅 🦅", 
-        description: "독수리 오남매, 첫째.ᐟ", 
-        svn_url: "https://github.com/Owen-Choi", 
-        personal_page: "/home", 
-        student_id: "201835539", 
-        email: "oldstyle482@gmail.com", 
-        stargazers_count: 0, 
-        languages_url: "", 
-        pushed_at: 0}, 
-    {name: "지현종 🦅", 
-        description: "독수리 오남매, 둘째.ᐟ.ᐟ", 
-        svn_url: "https://github.com/JongAAAAAAAAA", 
-        personal_page: "/home", 
-        student_id: "201835746", 
-        email: "wlguswhd0809@naver.com", 
-        stargazers_count: 0, 
-        languages_url: "", 
-        pushed_at: 0}, 
-    {name: "임동혁 🦅", 
-        description: "독수리 오남매, 셋째.ᐟ.ᐟ.ᐟ", 
-        svn_url: "https://github.com/IMDongH", 
-        personal_page: "/home",
-        student_id: "201835506", 
-        email: "idh1007@naver.com",  
-        stargazers_count: 0, 
-        languages_url: "", 
-        pushed_at: 0}, 
-    {name: "김민경 🦅", 
-        description: "독수리 오남매, 넷째.ᐟ.ᐟ.ᐟ.ᐟ", 
-        svn_url: "https://github.com/minkyung73", 
-        personal_page: "/home", 
-        student_id: "202035311", 
-        email: "minkyung7365@gmail.com", 
-        stargazers_count: 10, 
-        languages_url: "", 
-        pushed_at: 0}, 
-    {name: "박정연 🦅", 
-        description: "독수리 오남매, 다섯째.ᐟ.ᐟ.ᐟ.ᐟ.ᐟ", 
-        svn_url: "https://github.com/jyeon172", 
-        personal_page: "/home", 
-        student_id: "202035521", 
-        email: "jyeon172@naver.com", 
-        stargazers_count: 0, 
-        languages_url: "", 
-        pushed_at: 0}, 
+    {
+      name: "최철웅 🦅",
+      description: "독수리 오남매, 첫째.ᐟ",
+      svn_url: "https://github.com/Owen-Choi",
+      personal_page: "/home/C-Page",
+      student_id: "201835539",
+      email: "oldstyle482@gmail.com",
+      stargazers_count: 0,
+      languages_url: "",
+      pushed_at: 0,
+    },
+    {
+      name: "지현종 🦅",
+      description: "독수리 오남매, 둘째.ᐟ.ᐟ",
+      svn_url: "https://github.com/JongAAAAAAAAA",
+      personal_page: "/home/J-Page",
+      student_id: "201835746",
+      email: "wlguswhd0809@naver.com",
+      stargazers_count: 0,
+      languages_url: "",
+      pushed_at: 0,
+    },
+    {
+      name: "임동혁 🦅",
+      description: "독수리 오남매, 셋째.ᐟ.ᐟ.ᐟ",
+      svn_url: "https://github.com/IMDongH",
+      personal_page: "/home/I_Page",
+      student_id: "201835506",
+      email: "idh1007@naver.com",
+      stargazers_count: 0,
+      languages_url: "",
+      pushed_at: 0,
+    },
+    {
+      name: "김민경 🦅",
+      description: "독수리 오남매, 넷째.ᐟ.ᐟ.ᐟ.ᐟ",
+      svn_url: "https://github.com/minkyung73",
+      personal_page: "/home/K-Page",
+      student_id: "202035311",
+      email: "minkyung7365@gmail.com",
+      stargazers_count: 10,
+      languages_url: "",
+      pushed_at: 0,
+    },
+    {
+      name: "박정연 🦅",
+      description: "독수리 오남매, 다섯째.ᐟ.ᐟ.ᐟ.ᐟ.ᐟ",
+      svn_url: "https://github.com/jyeon172",
+      personal_page: "/home/P-Page",
+      student_id: "202035521",
+      email: "jyeon172@naver.com",
+      stargazers_count: 0,
+      languages_url: "",
+      pushed_at: 0,
+    },
   ];
 
   // 여기는 냅둬도 될 거 같당
@@ -140,14 +149,14 @@ const Project = ({ heading, username, length, specfic }) => {
                   // id={`project-card-${index}`}
                   value={project}
                 />
-            ))
+              ))
             : dummyProjectsArr.map((project, index) => (
-              <ProjectCard
-                key={`dummy-${index}`}
-                id={`dummy-${index}`}
-                value={project}
-              />
-            ))}
+                <ProjectCard
+                  key={`dummy-${index}`}
+                  id={`dummy-${index}`}
+                  value={project}
+                />
+              ))}
         </Row>
       </Container>
     </Jumbotron>
