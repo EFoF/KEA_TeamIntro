@@ -71,7 +71,7 @@ const Project = ({ heading, username, length, specfic }) => {
       name: "임동혁 🦅",
       description: "독수리 오남매, 셋째.ᐟ.ᐟ.ᐟ",
       svn_url: "https://github.com/IMDongH",
-      personal_page: "/home/I-Page",
+      personal_page: "https://imdongh.github.io/portfolio-page/",
       student_id: "201835506",
       email: "idh1007@naver.com",
       stargazers_count: 0,
