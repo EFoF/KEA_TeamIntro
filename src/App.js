@@ -13,6 +13,7 @@ import JPage from "./team-pages/J/JPage.js";
 import PPage from "./team-pages/P/PPage.js";
 import KPage from "./team-pages/K/KPage.js";
 import CPage from "./team-pages/C/CPage.js";
+import IPage from "./team-pages/I/IPage.js";
 // import Experience from "./components/home/Experience";
 
 const Home = React.forwardRef((props, ref) => {
@@ -83,6 +84,7 @@ const App = () => {
         <Route path="P-Page" element={<PPage />} />
         <Route path="K-Page" element={<KPage />} />
         <Route path="C-Page" element={<CPage />} />
+        <Route path="I-Page" element={<IPage />} />
       </Routes>
       {/* {false && <Route path="/blog" exact component={Blog} />}
       {false && <Route path="/blog/:id" component={BlogPost} />} */}
