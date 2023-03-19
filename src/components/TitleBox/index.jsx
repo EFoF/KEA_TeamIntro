@@ -21,15 +21,7 @@ const TitleBox = ({ info, handleChange }) => {
             name="title"
             value={info.title}
             onChange={({ target: { value } }) => handleChange && handleChange('title', value)}
-          />
-          {/* <input
-            type="text"
-            className="inputs__detail"
-            placeholder="설문지 설명"
-            name="detail"
-            value={info.detail}
-            onChange={({ target: { value } }) => handleChange && handleChange('detail', value)}
-          /> */}
+          />          
         </div>
       ) : (
         <div className="preview">
