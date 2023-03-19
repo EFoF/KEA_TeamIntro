@@ -28,7 +28,7 @@ const about = {
   show: true,
   heading: "About us",
   imageLink: require("../editable-stuff/dock5.png"),
-  imageSize: 375,
+  imageSize: 330,
   message:
     "구글 애플 아마존 독수리 레츠고",
   resume: "https://github.com/EFoF"

@@ -18,7 +18,10 @@ const ProjectCard = ({ value }) => {
   } = value;
   return (
     <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
+      <Card 
+      bg={'light'}
+      text={'dark'}
+      className="card shadow-lg p-3 mb-5 rounded">        
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>
@@ -57,13 +60,13 @@ const ProjectCard = ({ value }) => {
 const CardButtons = ({ svn_url, personal_page }) => {
   return (
     <div className="d-grid gap-2 d-md-block">
-      <a href={personal_page} className="btn btn-outline-secondary mx-2">
+      <a href={personal_page} className="btn btn-outline-secondary mx-2 bg-secondary">
         <i className="fab fa-github" /> Page
       </a>
       <a
         href={svn_url}
         target=" _blank"
-        className="btn btn-outline-secondary mx-2"
+        className="btn btn-outline-secondary mx-2 bg-secondary"
       >
         <i className="fab fa-github" /> Repo
       </a>
