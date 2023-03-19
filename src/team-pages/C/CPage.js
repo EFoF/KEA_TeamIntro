@@ -140,7 +140,7 @@ export default function CPage() {
 
         <hr style={{ width: "1000px" }} />
 
-        <div style={{ marginTop: "315px" }}></div>
+        <div style={{ marginTop: "305px" }}></div>
 
         <div className="parent">
           <div className="child left">
