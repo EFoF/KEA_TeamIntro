@@ -13,7 +13,7 @@ function BasicElements() {
           <Container>
             <p id="info" className="text-warning">
               <br></br>
-              <h3 className="title">지현종의 탄생</h3>
+              <h3 className="titleJ">지현종의 탄생</h3>
             </p>
             <p className="category">1999.08.09</p>
             <Row>

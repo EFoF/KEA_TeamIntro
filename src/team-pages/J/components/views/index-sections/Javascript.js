@@ -14,7 +14,7 @@ function Javascript() {
       <div className="section section-javascript" id="javascriptComponents">
         <Container>
           <p className="text-warning">
-            <h3 className="title">Projects</h3>
+            <h3 className="titleJ">Projects</h3>
             <br />
           </p>
           <Row id="modals">
@@ -57,7 +57,7 @@ function Javascript() {
                   >
                     <i className="now-ui-icons ui-1_simple-remove"></i>
                   </button>
-                  <h4 className="title title-up">Family Guardian</h4>
+                  <h4 className="titleJ title-up">Family Guardian</h4>
                 </div>
                 <ModalBody>
                   <p>
@@ -94,7 +94,7 @@ function Javascript() {
                   >
                     <i className="now-ui-icons ui-1_simple-remove"></i>
                   </button>
-                  <h4 className="title title-up">Budget Management</h4>
+                  <h4 className="titleJ title-up">Budget Management</h4>
                 </div>
                 <ModalBody>
                   <p>
