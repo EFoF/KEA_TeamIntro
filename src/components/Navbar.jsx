@@ -15,6 +15,7 @@ const Navigation = React.forwardRef((props, ref) => {
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
   const location = useLocation();
+  const bgStyle = { backgroundColor: "#ff9933" };
   useScrollPosition(
     ({ prevPos, currPos }) => {
       if (location.pathname === "/Form") return;
@@ -39,14 +40,14 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${
-        !isTop ? "navbar-white" : "navbar-transparent"
-      }`}
+      className={`px-3 fixed-top ${!isTop && "navbar-white"}`}
       expand="lg"
+      style={isTop ? bgStyle : bgStyle} // bgStyle 변수 적용.
     >
       <Navbar.Brand
         className="navbar-brand"
         href={process.env.PUBLIC_URL + "/#home"}
+        style={{ fontSize: "1.5rem" }}
       >
         {`${mainBody.Name}`}
       </Navbar.Brand>

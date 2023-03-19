@@ -26,7 +26,7 @@ function Tabs() {
       <div className="section section-tabs">
         <Container>
           <div className="text-warning">
-            <h3 className="title">Memo</h3>
+            <h3 className="titleJ">Memo</h3>
           </div>
           <Row>
             <Col className="ml-auto mr-auto" md="10" xl="6">

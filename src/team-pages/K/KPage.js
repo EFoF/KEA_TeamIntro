@@ -14,15 +14,12 @@ import IndexNavbar from "./components/components/Navbars/IndexNavbar";
 import DarkFooter from "./components/components/Footers/DarkFooter";
 
 // sections for this page
-import Images from "./components/views/index-sections/Images";
 import BasicElements from "./components/views/index-sections/BasicElements";
-import Tabs from "./components/views/index-sections/Tabs";
-import Javascript from "./components/views/index-sections/Javascript";
-import Carousel from "./components/views/index-sections/Carousel";
+import Javascript_mo from "./components/views/index-sections/Javascript";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function KPage() {
+function App() {
   const [showScroll, setShowScroll] = useState(false);
 
   React.useEffect(() => {
@@ -58,10 +55,10 @@ function KPage() {
         <IndexHeader />
         <div className="main">
           <BasicElements />
-          <Images />
-          <Carousel />
-          <Tabs />
-          <Javascript />
+          {/* <Images /> */}
+          {/* <Carousel /> */}
+          {/* <Tabs /> */}
+          <Javascript_mo />
         </div>
         <div
           className="scroll-to-top"
@@ -82,4 +79,4 @@ function KPage() {
   );
 }
 
-export default KPage;
+export default App;

@@ -1,317 +1,143 @@
 import React from "react";
-// react plugins that creates an input with a date picker
-// import Datetime from "react-datetime";
+
+// react plugin used to create switch buttons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faMeta } from "@fortawesome/free-brands-svg-icons";
+import { faB } from "@fortawesome/free-solid-svg-icons";
+
+import Switch from "react-bootstrap-switch";
+// plugin that creates slider
+import Slider from "nouislider";
+
 // reactstrap components
 import {
   Button,
+  Label,
   FormGroup,
+  Input,
+  // InputGroupAddon,
+  InputGroupText,
+  InputGroup,
   Container,
-  Modal,
-  ModalBody,
   Row,
   Col,
-  UncontrolledTooltip,
-  PopoverBody,
-  PopoverHeader,
-  UncontrolledPopover,
   NavLink,
 } from "reactstrap";
+import Javascript from "./Javascript";
 
 // core components
 
-function Javascript() {
-  const [modal1, setModal1] = React.useState(false);
-  const [modal2, setModal2] = React.useState(false);
+function Javascript_mo() {
+  const [leftFocus, setLeftFocus] = React.useState(false);
+  const [rightFocus, setRightFocus] = React.useState(false);
+  // const InfoRef = useRef();
+  // const infoClick = () =>
+  //   InfoRef.current.scrollIntoView({
+  //     behavior: 'smooth',
+  //     block: 'start',
+  //   });
+  // React.useEffect(() => {
+  //   if (
+  //     !document
+  //       .getElementById("sliderRegular")
+  //       .classList.contains("noUi-target")
+  //   ) {
+  //     Slider.create(document.getElementById("sliderRegular"), {
+  //       start: [50],
+  //       connect: [true, false],
+  //       step: 0.5,
+  //       range: { min: 0, max: 100 },
+  //     });
+  //   }
+  //   if (n
+  //     !document.getElementById("sliderDouble").classList.contains("noUi-target")
+  //   ) {
+  //     Slider.create(document.getElementById("sliderDouble"), {
+  //       start: [20, 80],
+  //       connect: [false, true, false],
+  //       step: 1,
+  //       range: { min: 0, max: 100 },
+  //     });
+  //   }
+  // });
   return (
     <>
-      <div id="projects"></div>
-      <div className="section section-javascript" id="javascriptComponents">
+      <div className="section section-basic" id="basic-elements">
         <Container>
-          <p className="text-warning">
-            <h3 className="title">Projects</h3>
-            <br />
+          {/* <div ref={InfoRef}></div> */}
+          <p id="info" className="text-warning">
+            <br></br>
+            <h2 style={{fontWeight: 600}}>Project</h2>
+            <br/>
           </p>
-          <Row id="modals">
-            <Col md="6">
-              <p className="category">
-                <h5>Click Buttons!</h5>
-              </p>
-              <br />
-              <Button
-                color="primary"
-                className="mr-1"
-                onClick={() => setModal1(true)}
-                style={{ marginBottom: "80px", fontSize: 15 }}
-              >
-                Project 1
-              </Button>
-              <Button
-                color="primary"
-                className="mr-1"
-                onClick={() => setModal2(true)}
-                style={{
-                  marginLeft: "50px",
-                  marginBottom: "80px",
-                  fontSize: 15,
-                }}
-              >
-                Project 2
-              </Button>
-              {/* <Button color="info" onClick={() => setModal2(true)}>
-                Launch Modal Mini
-              </Button> */}
-              <Modal isOpen={modal1} toggle={() => setModal1(false)}>
-                <div className="modal-header justify-content-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    <i className="now-ui-icons ui-1_simple-remove"></i>
-                  </button>
-                  <h4 className="title title-up">Family Guardian</h4>
+          {/*사진이랑 info 나란히 정렬 하기..*/}
+          <Row>
+            <div style={{ display: "table", flexDirection: "row", width: '100%'}}>
+              <div style={{paddingRight: 100, display: "table-cell"}}>
+                <img
+                    alt="..."
+                    // className="rounded-circle"
+                    height={400}
+                    src={require("../../../styles/img/ming_project1.png")}
+                    />
                 </div>
-                <ModalBody>
-                  <p>
-                    <img
-                      alt="Project 1"
-                      src={require("../../../styles/img/app-main.png")}
-                    ></img>
-                  </p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button
-                    color="default"
-                    type="button"
-                    href="https://github.com/JongAAAAAAAAA/Integrated_Project"
-                  >
-                    Github
-                  </Button>
-                  <Button
-                    color="danger"
-                    type="button"
-                    onClick={() => setModal1(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-
-              <Modal isOpen={modal2} toggle={() => setModal2(false)}>
-                <div className="modal-header justify-content-center">
-                  <button
-                    className="close"
-                    type="button"
-                    onClick={() => setModal2(false)}
-                  >
-                    <i className="now-ui-icons ui-1_simple-remove"></i>
-                  </button>
-                  <h4 className="title title-up">Budget Management</h4>
-                </div>
-                <ModalBody>
-                  <p>
-                    <img
-                      alt="Project 2"
-                      src={require("../../../styles/img/web-main.jpg")}
-                    ></img>
-                  </p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button
-                    color="default"
-                    type="button"
-                    href="https://github.com/JongAAAAAAAAA/Budget"
-                  >
-                    Github
-                  </Button>
-                  <Button
-                    color="danger"
-                    type="button"
-                    onClick={() => setModal2(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal>
-              {/* <Modal
-                modalClassName="modal-mini modal-info"
-                toggle={() => setModal2(false)}
-                isOpen={modal2}
-              >
-                <div className="modal-header justify-content-center">
-                  <div className="modal-profile">
-                    <i className="now-ui-icons users_circle-08"></i>
-                  </div>
-                </div>
-                <ModalBody>
-                  <p>Always have an access to your profile</p>
-                </ModalBody>
-                <div className="modal-footer">
-                  <Button className="btn-neutral" color="link" type="button">
-                    Back
-                  </Button>
-                  <Button
-                    className="btn-neutral"
-                    color="link"
-                    type="button"
-                    onClick={() => setModal2(false)}
-                  >
-                    Close
-                  </Button>
-                </div>
-              </Modal> */}
-            </Col>
-            {/* <Col md="6">
-              <h4>Popovers</h4>
-              <Button
-                color="default"
-                id="tooltip175489643"
-                type="button"
-                className="mr-1"
-              >
-                On left
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "top" : "left"}
-                target="tooltip175489643"
-                className="popover-primary"
-              >
-                <PopoverHeader>Popover On Left</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip768569110"
-                type="button"
-                className="mr-1"
-              >
-                On top
-              </Button>
-              <UncontrolledPopover placement="top" target="tooltip768569110">
-                <PopoverHeader>Popover on Top</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button
-                color="default"
-                id="tooltip966745638"
-                type="button"
-                className="mr-1"
-              >
-                On right
-              </Button>
-              <UncontrolledPopover
-                placement={window.innerWidth < 768 ? "bottom" : "right"}
-                target="tooltip966745638"
-              >
-                <PopoverHeader>Popover on Right</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                  <br /> Here will be some very useful information about his
-                  popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-              <Button color="default" id="tooltip822900491" type="button">
-                On bottom
-              </Button>
-              <UncontrolledPopover placement="bottom" target="tooltip822900491">
-                <PopoverHeader>Popover on Bottom</PopoverHeader>
-                <PopoverBody>
-                  Here will be some very useful information about his popover.
-                </PopoverBody>
-              </UncontrolledPopover>
-            </Col>
-            <br></br>
-            <br></br>
-            <Col md="6">
-              <h4>Datepicker</h4>
-              <Row>
-                <Col md="6">
-                  <div className="datepicker-container">
-                    <FormGroup>
-                      <Datetime
-                        timeFormat={false}
-                        inputProps={{ placeholder: "Datetime Picker Here" }}
-                      />
-                    </FormGroup>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-            <Col md="6">
-              <h4>Tooltips</h4>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip116884155"
-                type="button"
-              >
-                On left
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="left"
-                target="tooltip116884155"
-              >
-                Tooltip on left
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip502327420"
-                type="button"
-              >
-                On top
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="top"
-                target="tooltip502327420"
-              >
-                Tooltip on top
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip mr-1"
-                color="default"
-                id="tooltip243887155"
-                type="button"
-              >
-                On bottom
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="bottom"
-                target="tooltip243887155"
-              >
-                Tooltip on bottom
-              </UncontrolledTooltip>
-              <Button
-                className="btn-tooltip"
-                color="default"
-                id="tooltip542703310"
-                type="button"
-              >
-                On right
-              </Button>
-              <UncontrolledTooltip
-                delay={0}
-                placement="right"
-                target="tooltip542703310"
-              >
-                Tooltip on right
-              </UncontrolledTooltip>
-              <div className="clearfix"></div>
-              <br></br>
-              <br></br>
-            </Col> */}
+                <br/>
+                <div style={{textAlign: "left"}}>
+                    <h3 className="project">졸업작품</h3>
+                    <h4 className="project_name">U-Friends</h4>
+                    <p className="category">유프렌즈는 심리상담 챗봇으로, 사용자의 감정을 분석하여 심리상담을 진행합니다.</p>
+              </div>
+            </div>
           </Row>
+          <br/><br/><br/><br/><br/><br/><br/><br/>
+          <Row>
+            <div style={{ display: "table", flexDirection: "row", width: '100%'}}>
+              <div style={{textAlign: "right", paddingLeft: 20}}>
+                <h3 className="project">그래픽스</h3>
+                <h4 className="project_name">Cubi Game</h4>
+                <p className="category">큐비게임은 세 단계에 걸쳐 좀비를 물리치고 미션을 완수하는 게임입니다.</p>
+              </div>
+              <br/>
+              <div style={{paddingLeft: 30, display: "table-cell"}}>
+                <img
+                alt="..."
+                // className="rounded-circle"
+                height={400}
+                src={require("../../../styles/img/ming_project2.png")}
+                />
+              </div>
+            </div>
+          </Row>
+          <br/><br/><br/><br/><br/><br/><br/><br/>
+          <Row>
+            <div style={{ display: "table", flexDirection: "row", width: '100%'}}>
+              <div style={{paddingRight: 100, display: "table-cell"}}>
+                <img
+                alt="..."
+                // className="rounded-circle"
+                height={400}
+                src={require("../../../styles/img/ming_project3.png")}
+                />
+              </div>
+              <br/>
+              <div style={{textAlign: "left"}}>
+                <h3 className="project">모바일 프로그래밍</h3>
+                <h4 className="project_name">Perfect Day</h4>
+                <p className="category">퍼펙트 데이는 완벽한 하루를 보내기 위한 루틴 관리 앱입니다.</p>
+              </div>
+            </div>
+          </Row>
+
+          
+          <br/><br/><br/>
+          
+          
+          <div className="space-70"></div>
+          
         </Container>
       </div>
     </>
   );
 }
 
-export default Javascript;
+export default Javascript_mo;

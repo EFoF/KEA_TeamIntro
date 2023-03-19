@@ -6,7 +6,7 @@ import { faInstagram, faMeta } from "@fortawesome/free-brands-svg-icons";
 import { faB } from "@fortawesome/free-solid-svg-icons";
 
 // reactstrap components
-import { Container, Row, NavLink } from "reactstrap";
+import { Container, NavLink } from "reactstrap";
 
 // core components
 
@@ -18,7 +18,7 @@ function Images() {
           <div id="sns" className="space-70"></div>
           <div id="inputs">
             <p className="text-warning">
-              <h3 className="title">SNS</h3>
+              <h3 className="titleJ">SNS</h3>
             </p>
 
             <p
@@ -29,6 +29,7 @@ function Images() {
                 <NavLink
                   href="https://www.instagram.com/jong_aaaaaaaaa/"
                   style={{ marginRight: 190 }}
+                  className="text-primary"
                 >
                   <FontAwesomeIcon icon={faInstagram} />
                   &nbsp;&nbsp;Instagram
@@ -38,13 +39,17 @@ function Images() {
                 <NavLink
                   href="https://short.bondee.cc/4n4K5IfGP48"
                   style={{ marginRight: 220 }}
+                  className="text-primary"
                 >
                   <FontAwesomeIcon icon={faB} />
                   &nbsp;&nbsp;Bondee
                 </NavLink>
               </div>
               <div>
-                <NavLink href="https://www.facebook.com/profile.php?id=100006458500191">
+                <NavLink
+                  href="https://www.facebook.com/profile.php?id=100006458500191"
+                  className="text-primary"
+                >
                   <FontAwesomeIcon icon={faMeta} />
                   &nbsp;&nbsp;Meta
                 </NavLink>
@@ -53,32 +58,30 @@ function Images() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <Row>
-              <div style={{ marginRight: 50 }}>
-                <img
-                  width={"300"}
-                  height={"500"}
-                  alt="..."
-                  src={require("../../../styles/img/jay-insta.jpeg")}
-                ></img>
-              </div>
-              <div style={{ marginRight: 50 }}>
-                <img
-                  width={"300"}
-                  height={"500"}
-                  alt="..."
-                  src={require("../../../styles/img/jay-bondee.jpeg")}
-                ></img>
-              </div>
-              <div>
-                <img
-                  width={"300"}
-                  height={"500"}
-                  alt="..."
-                  src={require("../../../styles/img/jay-meta.jpeg")}
-                ></img>
-              </div>
-            </Row>
+            <div style={{ marginRight: 50 }}>
+              <img
+                width={"300"}
+                height={"500"}
+                alt="..."
+                src={require("../../../styles/img/jay-insta.jpeg")}
+              ></img>
+            </div>
+            <div style={{ marginRight: 50 }}>
+              <img
+                width={"300"}
+                height={"500"}
+                alt="..."
+                src={require("../../../styles/img/jay-bondee.jpeg")}
+              ></img>
+            </div>
+            <div>
+              <img
+                width={"300"}
+                height={"500"}
+                alt="..."
+                src={require("../../../styles/img/jay-meta.jpeg")}
+              ></img>
+            </div>
           </div>
         </Container>
       </div>

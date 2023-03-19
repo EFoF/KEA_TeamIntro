@@ -24,7 +24,7 @@
  * Copyright 2012-2013 Mattia Larentis
  * http://www.apache.org/licenses/LICENSE-2.0
  */
-.bootstrap-switch {
+ .bootstrap-switch {
   display: inline-block;
   direction: ltr;
   cursor: pointer;
@@ -3486,6 +3486,16 @@ p {
 .category {
   text-transform: capitalize;
   font-weight: 700;
+  color: #9a9a9a;
+}
+
+.project {
+  font-weight: 900;
+  color: black;
+}
+
+.project_name {
+  font-weight: 800;
   color: #9a9a9a;
 }
 

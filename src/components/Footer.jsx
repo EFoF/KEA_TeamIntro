@@ -1,28 +1,34 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import {mainBody} from "../editable-stuff/config";
+import { mainBody } from "../editable-stuff/config";
 
 const Footer = (props) => {
   const bgStyle = { backgroundColor: "#ff8c00" };
 
   return (
-    <footer style={{background: `linear-gradient(135deg,${mainBody.gradientColors})`}} className="mt-auto py-5 text-center ">
+    <footer
+      style={{
+        background: `linear-gradient(135deg,${mainBody.gradientColors})`,
+      }}
+      className="mt-auto py-1 text-center "
+    >
       <Container>
         {props.children}
-        <i className="fas fa-code" /> with <i className="fas fa-heart" /> by{" "}
+        <br />
+        <i className="fas fa-code" /> created <i className="fas fa-heart" /> by{" "}
         <a
           rel="noopener"
-          href="https://github.com/hashirshoaeb"
-          aria-label="My GitHub"
-        > <span className="badge bg-dark">
-            Hashir Shoaib
-          </span>
+          href="https://github.com/EFoF"
+          aria-label="Our GitHub"
+        >
+          {" "}
+          <span className="badge bg-dark">독수리 오남매</span>
         </a>{" "}
-        using <i className="fab fa-react" />
+        members <i className="fab fa-react" />
         <p>
           <small className="text-muted">
-            Project code is open source. Feel free to fork and make your own
-            version.
+            This page is a web page about our profile. We will update it
+            periodically.
           </small>
         </p>
       </Container>

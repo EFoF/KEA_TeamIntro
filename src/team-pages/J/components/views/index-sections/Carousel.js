@@ -68,13 +68,12 @@ function CarouselSection() {
       <div id="travel"></div>
       <div className="section" id="carousel">
         <Container>
-          {/* <div className="title">
-            <h3>Travel</h3> */}
           <p className="text-warning">
-            <h3 className="title">Travel</h3>
+            <h3 className="titleJ">Travel</h3>
 
-            <p className="category">
-              <br></br>&nbsp; Hawaii
+            <p className="category" style={{ marginLeft: 30 }}>
+              {" "}
+              Hawaii
             </p>
           </p>
           <Row className="justify-content-center">
