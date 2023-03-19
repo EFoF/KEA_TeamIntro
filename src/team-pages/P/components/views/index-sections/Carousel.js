@@ -33,11 +33,6 @@ const items = [
     altText: "NewYork City",
     caption: "NewYork City",
   },
-  {
-    src: require("../../../styles/img/hawaii-5.jpeg"),
-    altText: "At Beach, United States",
-    caption: "At Beach, United States",
-  },
 ];
 
 function CarouselSection() {
