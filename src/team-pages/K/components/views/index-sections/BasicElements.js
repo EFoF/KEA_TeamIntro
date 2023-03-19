@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faMeta } from "@fortawesome/free-brands-svg-icons";
 import { faB } from "@fortawesome/free-solid-svg-icons";
 
-// import Switch from "react-bootstrap-switch";
+import Switch from "react-bootstrap-switch";
 // plugin that creates slider
-// import Slider from "nouislider";
+import Slider from "nouislider";
 
 // reactstrap components
 import {
@@ -65,34 +65,30 @@ function BasicElements() {
         <Container>
           {/* <div ref={InfoRef}></div> */}
           <p id="info" className="text-warning">
-            <br></br>
-            <h3 className="title">About Me</h3>
-            <br />
+            <br></br><br></br><br></br>
+            <h2 style={{fontWeight: 600}}>About Me</h2>
+            <br/>
           </p>
           {/*사진이랑 info 나란히 정렬 하기..*/}
           <Row>
-            <div
-              style={{ display: "flex", flexDirection: "row", width: "100%" }}
-            >
-              <div style={{ paddingRight: 100 }}>
+            <div style={{ display: "flex", flexDirection: "row", width: '100%'}}>
+              <div style={{paddingRight: 100}}>
                 <img
-                  alt="..."
-                  className="rounded-circle"
-                  height={400}
-                  src={require("../../../styles/img/ming_profile.jpeg")}
+                alt="..."
+                className="rounded-circle"
+                height={400}
+                src={require("../../../styles/img/ming_profile.jpeg")}
                 />
               </div>
-              <br />
-              <div style={{ textAlign: "left" }}>
+              <br/>
+              <div style={{textAlign: "left"}}>
                 <p className="category">Name: 김민경</p>
                 <p className="category">Major: 소프트웨어전공</p>
                 <p className="category">2001.03.30</p>
               </div>
             </div>
           </Row>
-          <br />
-          <br />
-          <br />
+          <br/><br/><br/>
           <Row>
             <Col md="10">
               {/* <Button color="info" type="button">
@@ -190,7 +186,7 @@ function BasicElements() {
               </Button>
             </Col>
           </Row> */}
-
+          
           {/* <p>
             <h6>지현종 군 (? 세)</h6>
           </p>

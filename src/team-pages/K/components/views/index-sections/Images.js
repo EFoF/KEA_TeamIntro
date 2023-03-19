@@ -1,5 +1,4 @@
 import React from "react";
-
 // react plugin used to create switch buttons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faMeta } from "@fortawesome/free-brands-svg-icons";
