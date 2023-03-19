@@ -14,11 +14,8 @@ import IndexNavbar from "./components/components/Navbars/IndexNavbar";
 import DarkFooter from "./components/components/Footers/DarkFooter";
 
 // sections for this page
-import Images from "./components/views/index-sections/Images";
 import BasicElements from "./components/views/index-sections/BasicElements";
-import Tabs from "./components/views/index-sections/Tabs";
 import Javascript_mo from "./components/views/index-sections/Javascript";
-import Carousel from "./components/views/index-sections/Carousel";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
