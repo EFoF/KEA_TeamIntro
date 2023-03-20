@@ -17,7 +17,7 @@ function DarkFooter() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a href="https://github.com/EFoF" target="_blank">
                 About Us
               </a>
             </li>
